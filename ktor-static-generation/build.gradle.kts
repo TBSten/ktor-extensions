@@ -57,7 +57,7 @@ mavenPublishing {
         name = "ktor static generation runtime"
         description = "A library to output (SG) the route of ktor's get method as a static file."
         inceptionYear = "2024"
-        url = "https://github.com/tbsten/ktor-static-generation"
+        url = "https://github.com/TBSten/ktor-static-generation"
         licenses {
             license {
                 name = "MIT"
@@ -69,13 +69,13 @@ mavenPublishing {
             developer {
                 id = "tbsten"
                 name = "TBSten"
-                url = "https://github.com/tbsten"
+                url = "https://github.com/TBSten"
             }
         }
         scm {
-            url = "https://github.com/tbsten/ktor-static-generation/"
-            connection = "scm:git:git://github.com/tbsten/ktor-static-generation.git"
-            developerConnection = "scm:git:ssh://git@github.com/tbsten/ktor-static-generation.git"
+            url = "https://github.com/TBSten/ktor-static-generation/"
+            connection = "scm:git:git://github.com/TBSten/ktor-static-generation.git"
+            developerConnection = "scm:git:ssh://git@github.com/TBSten/ktor-static-generation.git"
         }
     }
 }
