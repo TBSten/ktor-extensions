@@ -1,5 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
-
 plugins {
     alias(libs.plugins.kotlinJvm)
     `java-gradle-plugin`
@@ -20,7 +18,7 @@ gradlePlugin {
     plugins {
         create("ktor-static-generation") {
             id = "me.tbsten.ktor.static.generation"
-            version = "0.0.1"
+            version = "0.1.0-dev01"
             implementationClass =
                 "me.tbsten.ktor.staticGeneration.KtorStaticGenerationPlugin"
             displayName = "Ktor static generation plugin"
@@ -36,7 +34,12 @@ publishing {
 
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+//    configure(
+//        GradlePlugin(
+//            javadocJar = JavadocJar.Javadoc(),
+//            sourcesJar = true,
+//        )
+//    )
 
     signAllPublications()
 

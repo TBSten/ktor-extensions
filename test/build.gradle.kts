@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "me.tbsten.ktor.static.generation.test"
-version = "0.0.1"
+version = "0.0.1-dev01"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")
@@ -18,6 +18,7 @@ application {
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -25,7 +26,7 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
     implementation(libs.ktor.server.config.yaml)
-    implementation(project(":ktor-static-generation"))
+    implementation("me.tbsten.ktor:ktor-static-generation-runtime:0.1.0-dev01")
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
 }

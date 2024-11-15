@@ -25,4 +25,4 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
-vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.30.0" }
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.29.0" }
