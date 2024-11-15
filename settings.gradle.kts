@@ -18,3 +18,4 @@ dependencyResolutionManagement {
 rootProject.name = "ktor-static-generation"
 include(":gradle-plugin")
 include(":ktor-static-generation")
+include(":test")
