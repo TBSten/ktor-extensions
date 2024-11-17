@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "me.tbsten.ktor"
-version = "0.1.0-dev03"
+version = "0.1.0-dev04"
 
 kotlin {
     jvm()

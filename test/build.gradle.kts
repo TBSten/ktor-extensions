@@ -26,7 +26,7 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
     implementation(libs.ktor.server.config.yaml)
-    implementation("me.tbsten.ktor:ktor-static-generation-runtime:0.1.0-dev03")
+    implementation("me.tbsten.ktor:ktor-static-generation-runtime:0.1.0-dev04")
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
 }
