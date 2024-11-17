@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "me.tbsten.ktor"
-version = "0.1.0-dev02"
+version = "0.1.0-dev03"
 
 dependencies {
 //    implementation(libs.kotlin.gradle.plugin)
@@ -18,7 +18,7 @@ gradlePlugin {
     plugins {
         create("ktor-static-generation") {
             id = "me.tbsten.ktor.static.generation"
-            version = "0.1.0-dev02"
+            version = "0.1.0-dev03"
             implementationClass =
                 "me.tbsten.ktor.staticGeneration.KtorStaticGenerationPlugin"
             displayName = "Ktor static generation plugin"
