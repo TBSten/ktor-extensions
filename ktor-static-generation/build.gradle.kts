@@ -1,5 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.vanniktech.mavenPublish)
@@ -37,12 +35,13 @@ kotlin {
     }
 }
 
+println("ORG_GRADLE_PROJECT_mavenCentralUsername.length: ${System.getenv("ORG_GRADLE_PROJECT_mavenCentralUsername").length}")
+println("ORG_GRADLE_PROJECT_mavenCentralPassword.length: ${System.getenv("ORG_GRADLE_PROJECT_mavenCentralPassword").length}")
+
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+//    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
     signAllPublications()
-    println("ORG_GRADLE_PROJECT_mavenCentralUsername.length: ${System.getenv("ORG_GRADLE_PROJECT_mavenCentralUsername").length}")
-    println("ORG_GRADLE_PROJECT_mavenCentralPassword.length: ${System.getenv("ORG_GRADLE_PROJECT_mavenCentralPassword").length}")
 
     coordinates(group.toString(), "ktor-static-generation-runtime", version.toString())
 
