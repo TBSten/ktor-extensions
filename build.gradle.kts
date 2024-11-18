@@ -5,3 +5,8 @@ plugins {
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.ktor) apply false
 }
+
+allprojects {
+    group = "me.tbsten.ktor"
+    version = "0.1.0-dev05"
+}

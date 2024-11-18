@@ -3,9 +3,6 @@ plugins {
     `java-gradle-plugin`
 }
 
-group = "me.tbsten.ktor"
-version = "0.1.0-dev04"
-
 dependencies {
 //    implementation(libs.kotlin.gradle.plugin)
 //    implementation(libs.kotlinx.serialization)
