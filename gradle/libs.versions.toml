@@ -1,16 +1,11 @@
 [versions]
 agp = "8.5.0"
 kotlin = "2.0.21"
-android-minSdk = "24"
-android-compileSdk = "34"
 ktor = "3.0.0"
 logback = "1.5.11"
 ktor-static-generation = "0.1.0-dev14"
 
 [libraries]
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-
-# ktor server
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-server-resources = { module = "io.ktor:ktor-server-resources", version.ref = "ktor" }
 ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
