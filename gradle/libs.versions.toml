@@ -5,6 +5,7 @@ android-minSdk = "24"
 android-compileSdk = "34"
 ktor = "3.0.0"
 logback = "1.5.11"
+ktor-static-generation = "0.1.0-dev14"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -16,6 +17,7 @@ ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref 
 ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
 
 # for test
+ktor-static-generation = { module = "me.tbsten.ktor:ktor-static-generation", version.ref = "ktor-static-generation" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -31,3 +33,6 @@ kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref =
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
 vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.29.0" }
+
+# for test
+ktorStaticGeneration = { id = "me.tbsten.ktor.static.generation", version.ref = "ktor-static-generation" }

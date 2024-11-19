@@ -3,7 +3,7 @@ import me.tbsten.ktor.staticGeneration.KtorStaticGenerationTask
 plugins {
     alias(libs.plugins.kotlinJvm)
     alias(libs.plugins.ktor)
-    id("me.tbsten.ktor.static.generation") version "0.0.1"
+    alias(libs.plugins.ktorStaticGeneration)
 }
 
 group = "me.tbsten.ktor.static.generation.test"
@@ -16,9 +16,9 @@ application {
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
-repositories {
-    mavenCentral()
-    mavenLocal()
+val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
+    mainClass.set("me.tbsten.ktor.staticGeneration.test.sg.StaticGenerationKt")
+    classpath(sourceSets.main.get().runtimeClasspath)
 }
 
 dependencies {
@@ -26,33 +26,5 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.logback.classic)
     implementation(libs.ktor.server.config.yaml)
-    implementation("me.tbsten.ktor:ktor-static-generation-runtime:0.1.0-dev04")
-    testImplementation(libs.ktor.server.test.host)
-    testImplementation(libs.kotlin.test.junit)
+    implementation(libs.ktor.static.generation)
 }
-
-//// TODO move to gradle plugin
-//tasks.create("staticGenerate", JavaExec::class.java) {
-//    mainClass.set("me.tbsten.ktor.staticGeneration.test.sg.StaticGenerationKt")
-//
-//    this.classpath = sourceSets.main.get().runtimeClasspath
-//
-//    environment["ktor.staticGeneration.outputDir"] =
-//        layout.buildDirectory
-//            .dir("ktor-static-generate-output").get().asFile
-//            .absolutePath
-//}
-
-val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
-    mainClass.set("me.tbsten.ktor.staticGeneration.test.sg.StaticGenerationKt")
-    classpath = sourceSets.main.get().runtimeClasspath
-}
-
-/*
-// TODO
-staticGeneration { // this: JavaExec
-    mainClass.set("me.tbsten.ktor.staticGeneration.test.sg.StaticGenerationKt")
-    classpath.from(sourceSets.main) // TODO 適用されているpluginをみて自動でデフォルト値を設定する
-    /* outputDir = layout.buildDirectory.dir("ktor-static-generate-output") */
-}
- */
