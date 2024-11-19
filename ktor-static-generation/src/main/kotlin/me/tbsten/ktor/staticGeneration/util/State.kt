@@ -2,9 +2,9 @@ package me.tbsten.ktor.staticGeneration.util
 
 import kotlin.reflect.KProperty
 
-fun <T> lateInit() = LateInit<T>()
+internal fun <T> lateInit() = LateInit<T>()
 
-class LateInit<T> internal constructor() {
+internal class LateInit<T> internal constructor() {
     private var state: State<T> = State.NotInit()
 
     var value: T
