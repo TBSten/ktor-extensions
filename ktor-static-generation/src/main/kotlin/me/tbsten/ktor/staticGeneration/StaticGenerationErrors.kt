@@ -2,13 +2,9 @@ package me.tbsten.ktor.staticGeneration
 
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
+import io.ktor.server.application.MissingApplicationPluginException
 
 object StaticGenerationErrors {
-    class NotConfiguredStaticGenerationPlugin : StaticGenerationException(
-        "Not configured StaticGeneration plugin.",
-        "Please configure `install(StaticGeneration)`.",
-    )
-
     class CanNotInferStaticPathsError(path: String) : StaticGenerationException(
         "Can not infer static paths from path:$path.",
         "Please specify staticPaths explicitly.",
@@ -35,6 +31,13 @@ object StaticGenerationErrors {
         StaticGenerationException(
             "Could not guess the file extension: path=`$path` Content-Type=$contentType.",
             "Please make sure you have set the Content-Type correctly. Or consider using staticGeneration(extension).",
+        )
+
+    class NotConfiguredStaticGenerationPlugin(cause: MissingApplicationPluginException) :
+        StaticGenerationException(
+            "Not configured StaticGeneration Ktor plugin.",
+            "Please add `plugin(StaticGeneration)` to your Application.",
+            cause,
         )
 }
 

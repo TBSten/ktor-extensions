@@ -1,5 +1,6 @@
 package me.tbsten.ktor.staticGeneration
 
+import io.ktor.server.application.MissingApplicationPluginException
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.Routing
 import io.ktor.server.routing.RoutingContext
@@ -41,6 +42,10 @@ private fun Route.registerStaticPaths(
     staticPaths: suspend () -> Flow<String>,
     extension: String?,
 ) {
-    val sgPlugin = plugin(StaticGeneration)
-    sgPlugin.registerStaticPaths(staticPaths, extension)
+    try {
+        val sgPlugin = plugin(StaticGeneration)
+        sgPlugin.registerStaticPaths(staticPaths, extension)
+    } catch (e: MissingApplicationPluginException) {
+        throw StaticGenerationErrors.NotConfiguredStaticGenerationPlugin(e)
+    }
 }
