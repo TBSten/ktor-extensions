@@ -18,10 +18,10 @@ fun Routing.staticGeneration(
 ) = get(
     path = path,
     body = body,
-).registerStaticPaths(staticPaths, extension).also { println("Route.registerStaticPaths: $path") }
+).registerStaticPaths(staticPaths, extension)
 
 // TODO
-fun inferStaticPaths(path: String): (suspend () -> Flow<String>)? {
+private fun inferStaticPaths(path: String): (suspend () -> Flow<String>)? {
     // TODO
     val isNoneParam = true
     if (isNoneParam) return { flowOf(path) }
@@ -36,7 +36,7 @@ fun Routing.staticGeneration(
 ) = get(
     path = path,
     body = body,
-).registerStaticPaths(staticPaths, extension).also { println("Route.registerStaticPaths: $path") }
+).registerStaticPaths(staticPaths, extension)
 
 private fun Route.registerStaticPaths(
     staticPaths: suspend () -> Flow<String>,

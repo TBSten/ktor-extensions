@@ -4,7 +4,6 @@ import io.ktor.http.ContentType
 
 internal fun guessFileExtension(contentType: ContentType): String? {
     builtInFileExtensions.keys.forEach {
-        println("guessFileExtension($contentType) $it -> ${contentType.match(it)}")
         if (contentType.match(it)) return builtInFileExtensions[it]
     }
     return null

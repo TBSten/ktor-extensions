@@ -17,57 +17,32 @@ import kotlinx.coroutines.flow.flatMapMerge
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.timeout
 import kotlinx.coroutines.flow.toCollection
-import kotlinx.coroutines.runBlocking
 import me.tbsten.ktor.staticGeneration.util.lateInit
 import java.io.File
 
-fun main() {
-//    val server = embeddedServer(
-//        Netty,
-//        host = "0.0.0.0",
-//        port = 8080,
-//        module = {},
-//    )
-//
-//    server.start(wait = true)
-
-    fun Application.module() {}
-
-    runBlocking {
-        generateStatic {
-            module()
-        }
-    }
-}
-
+@Suppress("unused")
 @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
 suspend fun generateStatic(
     outputDir: File = defaultOutputDirOrThrow(),
     applicationModule: Application.() -> Unit,
 ) = coroutineScope {
-    println("outputDir: $outputDir")
     runTestApplication {
-        println("test-1")
         var app by lateInit<Application>()
         install(StaticGeneration)
         application {
             applicationModule()
             app = this
         }
-        println("test-2")
         startApplication()
-        println("test-3")
 
         val sgPlugin = app.plugin(StaticGeneration)
         val staticPaths = sgPlugin.finalStaticPaths()
 
-        println("test-4")
         val routes =
             mutableListOf<StaticGenerateRoute>()
                 .let { sgPlugin.finalStaticPaths().toCollection(it) }
                 .toList()
 
-        println("test-5: routes: $routes")
         staticPaths
             .timeout(sgPlugin.timeOutOfStaticPaths)
             .flatMapMerge { staticRoute ->
@@ -101,12 +76,6 @@ private suspend fun ApplicationTestBuilder.generateStatic(
     // infer extension
     val extension: String = run {
         val responseContentType = response.contentType()
-        println("extension: responseContentType:$responseContentType")
-        println(
-            "extension: guess extensions: ${
-                responseContentType?.let { guessFileExtension(it) }
-            }"
-        )
 
         when {
             route.fileExtension != null ->
@@ -138,7 +107,7 @@ private suspend fun ApplicationTestBuilder.generateStatic(
 
 internal const val OutputDirPropertyKey = "ktor.staticGeneration.outputDir"
 
-fun defaultOutputDir(): File? {
+private fun defaultOutputDir(): File? {
     System.getProperty(OutputDirPropertyKey, "").let { if (!it.isNullOrEmpty()) return File(it) }
     System.getenv(OutputDirPropertyKey)?.let { if (it.isNotEmpty()) return File(it) }
     return null
