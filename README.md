@@ -1,13 +1,13 @@
-# ktor static generation
+＃ ktor static generation
 
-A plugin for outputting specific ktor routes to html files or other formats.
-By outputting the content implemented with ktor as a file, it is possible to deploy to static hosting services, etc.
+A plugin for outputting specific ktor routes to html files, etc.
+By outputting content implemented with ktor as a file, it enables deployment to static hosting services, etc.
 
-## Usage
+## How to use
 
 Note: <your_package> should be the name of the package appropriate for your project.
 
-### 1. add plugin dependencies and static generation settings to build.gradle.kts
+### 1. Add plugin dependencies and static generation settings to build.gradle.kts
 
 ```kt
 // build.gradle.kts
@@ -27,7 +27,7 @@ val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
 
 ### 2. Create StaticGeneration.kt under <your_package> in the src directory as follows
 
-Assume that you have configured your project's routing settings in configureRouting using the `routing` function.
+Assume that you have configured the routing settings for your project in configureRouting using the `routing` function.
 
 ```kt
 package <your_package>
@@ -45,19 +45,26 @@ fun main() {
 }
 ```
 
-### 3. replace `get("/path/to/route") { }` with `staticGeneration("/path/to/route") { }` in the static generate target
+### 3. Install StaticGeneration to the application
+
+````kt
+fun Application.module() {
+    install(StaticGeneration)
+}
+
+### 4. Replace `get("/path/to/route") { }` with `staticGeneration("/path/to/route") { }` in the static generate target.
 
 ```diff
 - get("/") {
 + staticGeneration("/") {
 -     call.respondText("<h1>Hello World!</h1>", ContentType.Text.Html)
 - }
-```
+````
 
 If your route contains parameters, you must specify the `staticPaths` argument as follows
 
 ```kt
-// NG parameter, but staticPaths is not specified.
+// NG There is a parameter ({blogId}), but staticPaths is not specified.
 staticGeneration(
     "/blog/{blogId}",
 ) { ... }
@@ -69,15 +76,15 @@ staticGeneration(
 ) { ... }
 ```
 
-### 4. call the `staticGenerate` gradle task
+### 4. Call the `staticGenerate` gradle task
 
 ```shell
 ./gradlew staticGenerate
 ```
 
-This will output the routes marked with `staticGenerate("/path") { }` in your project as files in the `build/ktor-static-generate-output/` directory.
+Now the routes marked with `staticGenerate("/path") { }` in your project will be output as files in the `build/ktor-static-generate-output/` directory.
 
-## Others
+## Other
 
 - Currently only the GET method is supported.
-- Please ask questions or report bugs at [issue](https://github.com/TBSten/ktor-static-generation/issues).
+- Please ask or report any questions or bugs at [issue](https://github.com/TBSten/ktor-static-generation/issues).

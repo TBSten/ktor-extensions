@@ -45,14 +45,21 @@ fun main() {
 }
 ```
 
-### 3. static generate 対象の `get("/path/to/route") { }` を `staticGeneration("/path/to/route") { }` に置き換える
+### 3. Application に StaticGeneration を 追加
+
+````kt
+fun Application.module() {
+    install(StaticGeneration)
+}
+
+### 4. static generate 対象の `get("/path/to/route") { }` を `staticGeneration("/path/to/route") { }` に置き換える
 
 ```diff
 - get("/") {
 + staticGeneration("/") {
 -     call.respondText("<h1>Hello World!</h1>", ContentType.Text.Html)
 - }
-```
+````
 
 もしあなたの route がパラメータを含む場合、以下のように `staticPaths` 引数を指定する必要があります。
 
