@@ -9,5 +9,5 @@ plugins {
 
 allprojects {
     group = "me.tbsten.ktor"
-    version = "0.1.0-dev09"
+    version = rootProject.libs.versions.ktor.static.generation.get()
 }
