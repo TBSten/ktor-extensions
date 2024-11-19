@@ -1,0 +1,12 @@
+public class me/tbsten/ktor/staticGeneration/KtorStaticGenerationPlugin : org/gradle/api/Plugin {
+	public fun <init> ()V
+	public synthetic fun apply (Ljava/lang/Object;)V
+	public fun apply (Lorg/gradle/api/Project;)V
+}
+
+public class me/tbsten/ktor/staticGeneration/KtorStaticGenerationTask : org/gradle/api/tasks/JavaExec {
+	public fun <init> (Lorg/gradle/api/Project;)V
+	public final fun getOutputDir ()Ljava/lang/String;
+	public final fun setOutputDir (Ljava/lang/String;)V
+}
+

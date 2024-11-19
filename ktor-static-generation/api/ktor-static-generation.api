@@ -1,0 +1,66 @@
+public final class me/tbsten/ktor/staticGeneration/EntryPointKt {
+	public static final fun defaultOutputDirOrThrow ()Ljava/io/File;
+	public static final fun generateStatic (Ljava/io/File;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun generateStatic$default (Ljava/io/File;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class me/tbsten/ktor/staticGeneration/RoutingKt {
+	public static final fun staticGeneration (Lio/ktor/server/routing/Routing;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Lkotlin/jvm/functions/Function2;)V
+	public static final fun staticGeneration (Lio/ktor/server/routing/Routing;Lkotlin/text/Regex;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Lkotlin/jvm/functions/Function2;)V
+	public static synthetic fun staticGeneration$default (Lio/ktor/server/routing/Routing;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+	public static synthetic fun staticGeneration$default (Lio/ktor/server/routing/Routing;Lkotlin/text/Regex;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGeneration {
+	public static final field Plugin Lme/tbsten/ktor/staticGeneration/StaticGeneration$Plugin;
+	public fun <init> (Lme/tbsten/ktor/staticGeneration/StaticGenerationConfig;)V
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGeneration$Plugin : io/ktor/server/application/BaseApplicationPlugin {
+	public fun getKey ()Lio/ktor/util/AttributeKey;
+	public fun install (Lio/ktor/server/application/Application;Lkotlin/jvm/functions/Function1;)Lme/tbsten/ktor/staticGeneration/StaticGeneration;
+	public synthetic fun install (Lio/ktor/util/pipeline/Pipeline;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGenerationConfig {
+	public fun <init> ()V
+	public final fun getTimeOutOfGenerateRoute-UwyO8pc ()J
+	public final fun getTimeOutOfStaticPaths-UwyO8pc ()J
+	public final fun setTimeOutOfGenerateRoute-LRDsOJo (J)V
+	public final fun setTimeOutOfStaticPaths-LRDsOJo (J)V
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGenerationErrors {
+	public static final field INSTANCE Lme/tbsten/ktor/staticGeneration/StaticGenerationErrors;
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGenerationErrors$CanNotInferStaticPathsError : me/tbsten/ktor/staticGeneration/StaticGenerationException {
+	public fun <init> (Ljava/lang/String;)V
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGenerationErrors$InvalidFileExtensionError : me/tbsten/ktor/staticGeneration/StaticGenerationException {
+	public fun <init> (Ljava/lang/String;Lio/ktor/http/ContentType;)V
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGenerationErrors$InvalidOutputDirPropertyError : me/tbsten/ktor/staticGeneration/StaticGenerationException {
+	public fun <init> ()V
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGenerationErrors$InvalidStaticPathsError : me/tbsten/ktor/staticGeneration/StaticGenerationException {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGenerationErrors$InvalidStatusCodeError : me/tbsten/ktor/staticGeneration/StaticGenerationException {
+	public fun <init> (Ljava/lang/String;Lio/ktor/http/HttpStatusCode;)V
+}
+
+public final class me/tbsten/ktor/staticGeneration/StaticGenerationErrors$NotConfiguredStaticGenerationPlugin : me/tbsten/ktor/staticGeneration/StaticGenerationException {
+	public fun <init> (Lio/ktor/server/application/MissingApplicationPluginException;)V
+}
+
+public abstract class me/tbsten/ktor/staticGeneration/StaticGenerationException : java/lang/Exception {
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
+}
+
