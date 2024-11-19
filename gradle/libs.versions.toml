@@ -1,9 +1,9 @@
 [versions]
+ktor-static-generation = "0.1.0"
 agp = "8.5.0"
 kotlin = "2.0.21"
 ktor = "3.0.0"
 logback = "1.5.11"
-ktor-static-generation = "0.1.0-dev14"
 
 [libraries]
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
