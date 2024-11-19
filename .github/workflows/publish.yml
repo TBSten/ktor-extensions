@@ -1,7 +1,7 @@
 name: Publish
 on:
   release:
-    types: [ released, prereleased ]
+    types: [released, prereleased]
   workflow_dispatch:
 
 permissions:
@@ -29,4 +29,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       # publish
-      - run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache -PmavenCentralUsername=${{secrets.OSSRH_USERNAME}} -PmavenCentralPassword=${{secrets.OSSRH_PASSWORD}} -PsigningInMemoryKeyId=${{secrets.OSSRH_GPG_SECRET_KEY_ID}} -PsigningInMemoryPassword=${{secrets.OSSRH_GPG_SECRET_KEY_PASSWORD}}
+      - run: ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
+          -PmavenCentralUsername=${{secrets.OSSRH_USERNAME}}
+          -PmavenCentralPassword=${{secrets.OSSRH_PASSWORD}}
+          -PsigningInMemoryKeyId=${{secrets.OSSRH_GPG_SECRET_KEY_ID}}
+          -PsigningInMemoryPassword=${{secrets.OSSRH_GPG_SECRET_KEY_PASSWORD}}
