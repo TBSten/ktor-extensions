@@ -8,5 +8,5 @@ plugins {
 
 allprojects {
     group = "me.tbsten.ktor"
-    version = "0.1.0-dev08"
+    version = "0.1.0-dev09"
 }

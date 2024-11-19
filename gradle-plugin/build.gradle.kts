@@ -6,8 +6,11 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
+sourceSets {}
+
 dependencies {
-//    implementation(libs.kotlin.gradle.plugin)
+    implementation(libs.kotlin.gradle.plugin)
+    implementation(libs.kotlin.gradle.plugin.api)
 //    implementation(libs.kotlinx.serialization)
 //    implementation(libs.ktor.gradle.plugin)
 //    implementation(libs.ksp.gradle.plugin)
