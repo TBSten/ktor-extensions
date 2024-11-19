@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinJvm)
     `java-gradle-plugin`
     alias(libs.plugins.vanniktech.mavenPublish)
+    alias(libs.plugins.binary.compatibility.validator)
 }
 
 sourceSets {}

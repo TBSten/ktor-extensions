@@ -3,6 +3,7 @@ import com.vanniktech.maven.publish.SonatypeHost
 plugins {
     alias(libs.plugins.kotlinJvm)
     alias(libs.plugins.vanniktech.mavenPublish)
+    alias(libs.plugins.binary.compatibility.validator)
 }
 
 kotlin {}
