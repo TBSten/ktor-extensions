@@ -82,7 +82,7 @@ staticGeneration(
 ./gradlew staticGenerate
 ```
 
-Now the routes marked with `staticGenerate("/path") { }` in your project will be output as files in the `build/ktor-static-generate-output/` directory.
+Now the routes marked with `staticGeneration("/path") { }` in your project will be output as files in the `build/ktor-static-generate-output/` directory.
 
 ## Other
 

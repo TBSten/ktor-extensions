@@ -82,7 +82,7 @@ staticGeneration(
 ./gradlew staticGenerate
 ```
 
-これであなたのプロジェクトに含まれる `staticGenerate("/path") { }` でマークされたルートが、ファイルとして `build/ktor-static-generate-output/` ディレクトリに出力されます。
+これであなたのプロジェクトに含まれる `staticGeneration("/path") { }` でマークされたルートが、ファイルとして `build/ktor-static-generate-output/` ディレクトリに出力されます。
 
 ## その他
 
