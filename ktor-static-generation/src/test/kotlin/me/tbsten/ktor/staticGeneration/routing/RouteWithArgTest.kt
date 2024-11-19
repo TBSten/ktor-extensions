@@ -2,7 +2,7 @@ package me.tbsten.ktor.staticGeneration.routing
 
 import kotlinx.coroutines.flow.flowOf
 import me.tbsten.ktor.staticGeneration.staticGeneration
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 
 class RouteWithArgTest {
     @Test

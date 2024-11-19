@@ -2,7 +2,7 @@ package me.tbsten.ktor.staticGeneration.routing
 
 import io.ktor.server.routing.Routing
 import me.tbsten.ktor.staticGeneration.staticGeneration
-import kotlin.test.Test
+import org.junit.jupiter.api.Test
 
 class BasicRoutingTest {
     private fun Routing.basicTestRouting() {

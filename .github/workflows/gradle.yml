@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - target: jvmTest
+          - target: test
             os: ubuntu-latest
     runs-on: ${{ matrix.os }}
 

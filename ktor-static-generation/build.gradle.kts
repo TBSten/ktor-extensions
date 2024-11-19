@@ -12,6 +12,11 @@ dependencies {
     implementation(libs.ktor.server.resources)
     implementation(libs.ktor.server.test.host)
     implementation(libs.ktor.server.netty)
+    testImplementation(libs.kotlin.test.junit)
+}
+
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }
 
 mavenPublishing {
