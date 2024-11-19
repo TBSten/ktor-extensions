@@ -1,5 +1,5 @@
 [versions]
-ktor-static-generation = "0.1.0"
+ktor-static-generation = "0.1.1"
 agp = "8.5.0"
 kotlin = "2.0.21"
 ktor = "3.0.0"
