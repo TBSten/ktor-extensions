@@ -1,4 +1,4 @@
-＃ ktor static generation
+# ktor static generation
 
 A plugin for outputting specific ktor routes to html files, etc.
 By outputting content implemented with ktor as a file, it enables deployment to static hosting services, etc.

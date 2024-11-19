@@ -1,4 +1,4 @@
-＃ ktor static generation
+# ktor static generation
 
 ktor の特定の route を html ファイルなどに出力するための plugin。
 ktor で実装したコンテンツをファイルとして出力することで、静的ホスティングサービスなどへの展開を可能にします。
