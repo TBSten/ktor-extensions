@@ -1,41 +1,39 @@
 [versions]
-ktor-static-generation = "0.1.1"
-agp = "8.5.0"
+ktorStaticGeneration = "0.1.1"
 kotlin = "2.0.21"
 ktor = "3.0.0"
 logback = "1.5.11"
-ktlint-gradle-plugin = "12.1.1"
-vanniktech-mavenPublish = "0.29.0"
+ktlintGradlePlugin = "12.1.1"
+vanniktechMavenPublish = "0.29.0"
 
 [libraries]
-ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
-ktor-server-resources = { module = "io.ktor:ktor-server-resources", version.ref = "ktor" }
-ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
-ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+ktorServerCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktorServerResources = { module = "io.ktor:ktor-server-resources", version.ref = "ktor" }
+ktorServerTestHost = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+ktorServerNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
 
 # for test
-ktor-static-generation = { module = "me.tbsten.ktor:ktor-static-generation", version.ref = "ktor-static-generation" }
-logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
-ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+ktorStaticGeneration = { module = "me.tbsten.ktor:ktor-static-generation", version.ref = "ktorStaticGeneration" }
+logbackClassic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+ktorServerConfigYaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
+kotlinTestJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 
 # for build-logic
-kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlin-gradle-plugin-api = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin-api", version.ref = "kotlin" }
-ktlint-gradle-plugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint-gradle-plugin" }
-vanniktech-maven-publish-gradle-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "vanniktech-mavenPublish" }
+kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlinGradlePluginApi = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin-api", version.ref = "kotlin" }
+ktlintGradlePlugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlintGradlePlugin" }
+vanniktechMavenPublishGradlePlugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "vanniktechMavenPublish" }
 
 [plugins]
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
-vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech-mavenPublish" }
-binary-compatibility-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version = "0.16.3" }
-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-gradle-plugin" }
+vanniktechMavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenPublish" }
+binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version = "0.16.3" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintGradlePlugin" }
 
-ktorStaticGenerationLint = { id = "ktor.staticGeneration.build.logic.lint", version = "unspecified" }
-ktorStaticGenerationPublish = { id = "ktor.staticGeneration.build.logic.publish", version = "unspecified" }
+ktorStaticGenerationLint = { id = "ktor.staticGeneration.buildLogic.lint", version = "unspecified" }
+ktorStaticGenerationPublish = { id = "ktor.staticGeneration.buildLogic.publish", version = "unspecified" }
 
 # for test
-ktorStaticGeneration = { id = "me.tbsten.ktor.static.generation", version.ref = "ktor-static-generation" }
+ktorStaticGeneration = { id = "me.tbsten.ktor.static.generation", version.ref = "ktorStaticGeneration" }

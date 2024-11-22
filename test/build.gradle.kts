@@ -22,9 +22,9 @@ val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
 }
 
 dependencies {
-    implementation(libs.ktor.server.core)
-    implementation(libs.ktor.server.netty)
-    implementation(libs.logback.classic)
-    implementation(libs.ktor.server.config.yaml)
-    implementation(libs.ktor.static.generation)
+    implementation(libs.ktorServerCore)
+    implementation(libs.ktorServerNetty)
+    implementation(libs.logbackClassic)
+    implementation(libs.ktorServerConfigYaml)
+    implementation(libs.ktorStaticGeneration)
 }

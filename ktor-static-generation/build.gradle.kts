@@ -7,11 +7,11 @@ plugins {
 kotlin {}
 
 dependencies {
-    implementation(libs.ktor.server.core)
-    implementation(libs.ktor.server.resources)
-    implementation(libs.ktor.server.test.host)
-    implementation(libs.ktor.server.netty)
-    testImplementation(libs.kotlin.test.junit)
+    implementation(libs.ktorServerCore)
+    implementation(libs.ktorServerResources)
+    implementation(libs.ktorServerTestHost)
+    implementation(libs.ktorServerNetty)
+    testImplementation(libs.kotlinTestJunit)
 }
 
 tasks.withType<Test>().configureEach {

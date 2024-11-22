@@ -22,8 +22,8 @@ open class KtorStaticGenerationPublishPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
-                alias(libs.plugin("vanniktech-mavenPublish"))
-                alias(libs.plugin("binary-compatibility-validator"))
+                alias(libs.plugin("vanniktechMavenPublish"))
+                alias(libs.plugin("binaryCompatibilityValidator"))
             }
 
             mavenPublishing {

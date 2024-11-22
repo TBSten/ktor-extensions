@@ -18,19 +18,19 @@ kotlin {
 }
 
 dependencies {
-    implementation(libs.kotlin.gradle.plugin)
-    implementation(libs.ktlint.gradle.plugin)
-    implementation(libs.vanniktech.maven.publish.gradle.plugin)
+    implementation(libs.kotlinGradlePlugin)
+    implementation(libs.ktlintGradlePlugin)
+    implementation(libs.vanniktechMavenPublishGradlePlugin)
 }
 
 gradlePlugin {
     plugins {
         register("lint") {
-            id = "ktor.staticGeneration.build.logic.lint"
+            id = "ktor.staticGeneration.buildLogic.lint"
             implementationClass = "me.tbsten.ktor.staticGeneration.KtorStaticGenerationLintPlugin"
         }
         register("publish") {
-            id = "ktor.staticGeneration.build.logic.publish"
+            id = "ktor.staticGeneration.buildLogic.publish"
             implementationClass =
                 "me.tbsten.ktor.staticGeneration.KtorStaticGenerationPublishPlugin"
         }
