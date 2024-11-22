@@ -10,14 +10,16 @@ class BasicRoutingTest {
         staticGeneration("/about") { TODO() }
     }
 
-    private val expectedStaticPaths = listOf(
-        "/",
-        "/about",
-    )
+    private val expectedStaticPaths =
+        listOf(
+            "/",
+            "/about",
+        )
 
     @Test
-    fun validBasicRoutingTest() = testStaticPaths(
-        { basicTestRouting() },
-        expectedStaticPaths,
-    )
+    fun validBasicRoutingTest() =
+        testStaticPaths(
+            { basicTestRouting() },
+            expectedStaticPaths,
+        )
 }

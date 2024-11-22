@@ -13,7 +13,10 @@ class StaticGeneration(config: StaticGenerationConfig) {
     internal val timeOutOfGenerateRoute: Duration = config.timeOutOfGenerateRoute
     internal val timeOutOfStaticPaths: Duration = config.timeOutOfStaticPaths
 
-    internal fun registerStaticPaths(staticPaths: suspend () -> Flow<String>, extension: String?) {
+    internal fun registerStaticPaths(
+        staticPaths: suspend () -> Flow<String>,
+        extension: String?,
+    ) {
         registeredStaticPaths.add {
             staticPaths()
                 .map { StaticGenerateRoute(it, extension) }

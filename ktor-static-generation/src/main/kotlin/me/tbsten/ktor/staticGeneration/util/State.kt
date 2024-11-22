@@ -16,11 +16,18 @@ internal class LateInit<T> internal constructor() {
     val isInitialized: Boolean
         get() = this.state is State.Ready
 
-    operator fun getValue(t: T?, property: KProperty<*>): T {
+    operator fun getValue(
+        t: T?,
+        property: KProperty<*>,
+    ): T {
         return this.value
     }
 
-    operator fun setValue(t: T?, property: KProperty<*>, newValue: T) {
+    operator fun setValue(
+        t: T?,
+        property: KProperty<*>,
+        newValue: T,
+    ) {
         this.value = newValue
     }
 

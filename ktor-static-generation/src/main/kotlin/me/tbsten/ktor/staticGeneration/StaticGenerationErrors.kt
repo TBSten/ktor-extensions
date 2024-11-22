@@ -46,9 +46,9 @@ abstract class StaticGenerationException internal constructor(
     recovery: String?,
     cause: Throwable?,
 ) : Exception(
-    message + if (recovery == null) "" else ".\n$recovery",
-    cause,
-) {
+        message + if (recovery == null) "" else ".\n$recovery",
+        cause,
+    ) {
     constructor(message: String) : this(message, null, null)
     constructor(message: String, recovery: String) : this(message, recovery, null)
     constructor(message: String, cause: Throwable?) : this(message, null, cause)

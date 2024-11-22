@@ -52,7 +52,7 @@ suspend fun generateStatic(
                         generateStatic(
                             outputRootDir = outputDir,
                             route = staticRoute,
-                        )
+                        ),
                     )
                 }.timeout(sgPlugin.timeOutOfGenerateRoute)
             }.collect()
@@ -74,37 +74,41 @@ private suspend fun ApplicationTestBuilder.generateStatic(
     }
 
     // infer extension
-    val extension: String = run {
-        val responseContentType = response.contentType()
+    val extension: String =
+        run {
+            val responseContentType = response.contentType()
 
-        when {
-            route.fileExtension != null ->
-                route.fileExtension
+            when {
+                route.fileExtension != null ->
+                    route.fileExtension
 
-            responseContentType?.let { guessFileExtension(it) } != null ->
-                guessFileExtension(responseContentType)!!
+                responseContentType?.let { guessFileExtension(it) } != null ->
+                    guessFileExtension(responseContentType)!!
 
-            else ->
-                throw StaticGenerationErrors.InvalidFileExtensionError(
-                    path = route.path,
-                    contentType = responseContentType,
-                )
+                else ->
+                    throw StaticGenerationErrors.InvalidFileExtensionError(
+                        path = route.path,
+                        contentType = responseContentType,
+                    )
+            }
         }
-    }
 
     // output to file
     val path =
-        if (route.path.endsWith("/")) "${route.path}index$extension"
-        else "${route.path}$extension"
+        if (route.path.endsWith("/")) {
+            "${route.path}index$extension"
+        } else {
+            "${route.path}$extension"
+        }
     File(outputRootDir, path)
         .also {
             it.parentFile.mkdirs()
             println("SG: ${route.path} -> ${it.path}")
-        }
-        .outputStream()
+        }.outputStream()
         .use { response.bodyAsChannel().copyTo(it) }
 }
 
+@Suppress("ktlint:standard:property-naming")
 internal const val OutputDirPropertyKey = "ktor.staticGeneration.outputDir"
 
 private fun defaultOutputDir(): File? {
@@ -113,5 +117,4 @@ private fun defaultOutputDir(): File? {
     return null
 }
 
-fun defaultOutputDirOrThrow(): File =
-    defaultOutputDir() ?: throw StaticGenerationErrors.InvalidOutputDirPropertyError()
+fun defaultOutputDirOrThrow(): File = defaultOutputDir() ?: throw StaticGenerationErrors.InvalidOutputDirPropertyError()

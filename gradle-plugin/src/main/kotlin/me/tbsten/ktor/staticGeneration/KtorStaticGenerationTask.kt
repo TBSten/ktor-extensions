@@ -15,16 +15,18 @@ import javax.inject.Inject
  * }
  * ```
  */
-open class KtorStaticGenerationTask @Inject constructor(project: Project) : JavaExec() {
-    init {
-        // TODO projectに適用されているpluginに応じてclasspathを設定
+open class KtorStaticGenerationTask
+    @Inject
+    constructor(project: Project) : JavaExec() {
+        init {
+            // TODO projectに適用されているpluginに応じてclasspathを設定
 //        classpath.from(sourceSets.main)
-    }
+        }
 
-    @Input
-    var outputDir: String =
-        project
-            .layout.buildDirectory
-            .dir("ktor-static-generate-output")
-            .get().asFile.absolutePath
-}
+        @Input
+        var outputDir: String =
+            project
+                .layout.buildDirectory
+                .dir("ktor-static-generate-output")
+                .get().asFile.absolutePath
+    }
