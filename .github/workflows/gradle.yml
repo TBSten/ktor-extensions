@@ -31,3 +31,4 @@ jobs:
       - run: ./gradlew test
       - run: ./gradlew apiCheck
       - run: ./gradlew ktlintCheck
+      - run: cd ./test && ./gradlew staticGenerate
