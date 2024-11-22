@@ -5,6 +5,9 @@ plugins {
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.ktor) apply false
     alias(libs.plugins.binary.compatibility.validator) apply false
+    alias(libs.plugins.ktlint) apply false
+    alias(libs.plugins.ktorStaticGenerationLint) apply false
+    alias(libs.plugins.ktorStaticGenerationPublish) apply false
 }
 
 allprojects {

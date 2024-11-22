@@ -4,6 +4,8 @@ agp = "8.5.0"
 kotlin = "2.0.21"
 ktor = "3.0.0"
 logback = "1.5.11"
+ktlint-gradle-plugin = "12.1.1"
+vanniktech-mavenPublish = "0.29.0"
 
 [libraries]
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
@@ -20,15 +22,20 @@ kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version
 # for build-logic
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-gradle-plugin-api = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin-api", version.ref = "kotlin" }
-
+ktlint-gradle-plugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint-gradle-plugin" }
+vanniktech-maven-publish-gradle-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "vanniktech-mavenPublish" }
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
-vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.29.0" }
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech-mavenPublish" }
 binary-compatibility-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version = "0.16.3" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-gradle-plugin" }
+
+ktorStaticGenerationLint = { id = "ktor.staticGeneration.build.logic.lint", version = "unspecified" }
+ktorStaticGenerationPublish = { id = "ktor.staticGeneration.build.logic.publish", version = "unspecified" }
 
 # for test
 ktorStaticGeneration = { id = "me.tbsten.ktor.static.generation", version.ref = "ktor-static-generation" }
