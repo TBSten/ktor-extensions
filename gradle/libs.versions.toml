@@ -5,6 +5,7 @@ ktor = "3.0.0"
 logback = "1.5.11"
 ktlintGradlePlugin = "12.1.1"
 vanniktechMavenPublish = "0.29.0"
+kotlinxCoroutines = "1.9.0"
 
 [libraries]
 ktorServerCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
@@ -16,7 +17,8 @@ ktorServerNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "kto
 ktorStaticGeneration = { module = "me.tbsten.ktor:ktor-static-generation", version.ref = "ktorStaticGeneration" }
 logbackClassic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 ktorServerConfigYaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
-kotlinTestJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlinTestJunit = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlinxCoroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
 
 # for build-logic
 kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }

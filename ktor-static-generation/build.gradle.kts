@@ -12,6 +12,7 @@ dependencies {
     implementation(libs.ktorServerTestHost)
     implementation(libs.ktorServerNetty)
     testImplementation(libs.kotlinTestJunit)
+    testImplementation(libs.kotlinxCoroutinesTest)
 }
 
 tasks.withType<Test>().configureEach {

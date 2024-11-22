@@ -20,11 +20,11 @@ fun Routing.staticGeneration(
     body = body,
 ).registerStaticPaths(staticPaths, extension)
 
-// TODO
-private fun inferStaticPaths(path: String): (suspend () -> Flow<String>)? {
-    // TODO
-    val isNoneParam = true
-    if (isNoneParam) return { flowOf(path) }
+internal fun inferStaticPaths(path: String): (suspend () -> Flow<String>)? {
+    val hasParam =
+        path.matches(Regex(""".*\{.*}.*""")) ||
+            path.matches(Regex(""".*\*.*"""))
+    if (!hasParam) return { flowOf(path) }
     return null
 }
 
