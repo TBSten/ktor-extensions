@@ -2,15 +2,12 @@ package me.tbsten.ktor.staticGeneration.test
 
 import io.ktor.http.ContentType
 import io.ktor.server.application.Application
-import io.ktor.server.application.install
 import io.ktor.server.response.respondText
 import io.ktor.server.routing.routing
 import kotlinx.coroutines.flow.flowOf
-import me.tbsten.ktor.staticGeneration.StaticGeneration
 import me.tbsten.ktor.staticGeneration.staticGeneration
 
 fun Application.configureRouting() {
-    install(StaticGeneration)
     routing {
         staticGeneration("/") {
             call.respondText("<h1>Hello World!</h1>", ContentType.Text.Html)
@@ -45,8 +42,8 @@ fun Application.configureRouting() {
                 """
                 <html lang="ja">
                 <head>
-                    <link rel="stylesheet" type="text/css" href="/style.css" /> 
-                    <link rel="stylesheet" type="text/css" href="./style.css" /> 
+                    <link rel="stylesheet" type="text/css" href="/style.css" />
+                    <link rel="stylesheet" type="text/css" href="./style.css" />
                 </head>
                 <body>
                     <h1>Blog - $blogId</h1>
