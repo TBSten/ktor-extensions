@@ -30,11 +30,11 @@ val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
 Assume that you have configured the routing settings for your project in configureRouting using the `routing` function.
 
 ```kt
-package <your_package>
+package <your_package >
 
-import kotlinx.coroutines.runBlocking
-import me.tbsten.ktor.staticGeneration.generateStatic
-import <your_package>.configureRouting
+    import kotlinx . coroutines . runBlocking
+    import me . tbsten . ktor . staticGeneration . generateStatic
+    import<your_package>.configureRouting
 
 fun main() {
     runBlocking {
@@ -47,19 +47,21 @@ fun main() {
 
 ### 3. Install StaticGeneration to the application
 
-````kt
+```kt
 fun Application.module() {
     install(StaticGeneration)
 }
+```
 
-### 4. Replace `get("/path/to/route") { }` with `staticGeneration("/path/to/route") { }` in the static generate target.
+### 4.Replace `get("/path/to/route") { }` with `staticGeneration("/path/to/route") { }` in the static generate target.
 
 ```diff
-- get("/") {
-+ staticGeneration("/") {
--     call.respondText("<h1>Hello World!</h1>", ContentType.Text.Html)
-- }
-````
+-get("/") {
++staticGeneration("/") {
+     -call.respondText("<h1>Hello World!</h1>", ContentType.Text.Html)
+     -
+ }
+```
 
 If your route contains parameters, you must specify the `staticPaths` argument as follows
 
@@ -86,5 +88,5 @@ Now the routes marked with `staticGeneration("/path") { }` in your project will 
 
 ## Other
 
-- Currently only the GET method is supported.
-- Please ask or report any questions or bugs at [issue](https://github.com/TBSten/ktor-static-generation/issues).
+-   Currently only the GET method is supported.
+-   Please ask or report any questions or bugs at [issue](https://github.com/TBSten/ktor-static-generation/issues).

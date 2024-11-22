@@ -51,6 +51,7 @@ fun main() {
 fun Application.module() {
     install(StaticGeneration)
 }
+```
 
 ### 4. static generate 対象の `get("/path/to/route") { }` を `staticGeneration("/path/to/route") { }` に置き換える
 
@@ -86,5 +87,5 @@ staticGeneration(
 
 ## その他
 
-- 現在は GET メソッドのみサポートしています。
-- 不明な点・不具合は [issue](https://github.com/TBSten/ktor-static-generation/issues) で質問・報告してください。
+-   現在は GET メソッドのみサポートしています。
+-   不明な点・不具合は [issue](https://github.com/TBSten/ktor-static-generation/issues) で質問・報告してください。
