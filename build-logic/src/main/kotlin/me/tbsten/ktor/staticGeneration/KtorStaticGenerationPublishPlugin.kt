@@ -5,6 +5,7 @@ import me.tbsten.ktor.staticGeneration.dsl.alias
 import me.tbsten.ktor.staticGeneration.dsl.libs
 import me.tbsten.ktor.staticGeneration.dsl.mavenPublishing
 import me.tbsten.ktor.staticGeneration.dsl.plugin
+import me.tbsten.ktor.staticGeneration.dsl.signing
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.publish.maven.MavenPom
@@ -30,7 +31,14 @@ open class KtorStaticGenerationPublishPlugin : Plugin<Project> {
                 publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
 
                 signAllPublications()
+            }
 
+            signing {
+                if (project.hasProperty("mavenCentralUsername") ||
+                    System.getenv("ORG_GRADLE_PROJECT_mavenCentralUsername") != null
+                ) {
+                    useGpgCmd()
+                }
             }
 
             val publishExtension =
@@ -63,7 +71,6 @@ open class KtorStaticGenerationPublishPlugin : Plugin<Project> {
 
                         scm()
                     }
-
                 }
             }
         }
