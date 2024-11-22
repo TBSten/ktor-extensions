@@ -30,7 +30,6 @@ open class KtorStaticGenerationPublishPlugin : Plugin<Project> {
                 publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
 
                 signAllPublications()
-
             }
 
             val publishExtension =
@@ -63,7 +62,6 @@ open class KtorStaticGenerationPublishPlugin : Plugin<Project> {
 
                         scm()
                     }
-
                 }
             }
         }
