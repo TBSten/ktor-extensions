@@ -8,7 +8,9 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlin.time.Duration
 
-class StaticGeneration(config: StaticGenerationConfig) {
+class StaticGeneration(
+    config: StaticGenerationConfig,
+) {
     private val registeredStaticPaths = mutableListOf<suspend () -> Flow<StaticGenerateRoute>>()
     internal val timeOutOfGenerateRoute: Duration = config.timeOutOfGenerateRoute
     internal val timeOutOfStaticPaths: Duration = config.timeOutOfStaticPaths
@@ -25,10 +27,8 @@ class StaticGeneration(config: StaticGenerationConfig) {
 
     internal fun finalStaticPaths(): Flow<StaticGenerateRoute> =
         flow {
-            println("finalStaticPaths: registeredStaticPaths.size:${registeredStaticPaths.size}")
             registeredStaticPaths.forEach { getStaticPaths ->
                 getStaticPaths.invoke().collect { staticPath ->
-                    println("finalStaticPaths:   staticPath:$staticPath")
                     emit(staticPath)
                 }
             }

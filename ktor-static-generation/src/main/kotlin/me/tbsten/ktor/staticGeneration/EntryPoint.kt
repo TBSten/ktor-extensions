@@ -112,8 +112,12 @@ private suspend fun ApplicationTestBuilder.generateStatic(
 internal const val OutputDirPropertyKey = "ktor.staticGeneration.outputDir"
 
 private fun defaultOutputDir(): File? {
-    System.getProperty(OutputDirPropertyKey, "").let { if (!it.isNullOrEmpty()) return File(it) }
-    System.getenv(OutputDirPropertyKey)?.let { if (it.isNotEmpty()) return File(it) }
+    System
+        .getProperty(OutputDirPropertyKey, "")
+        .let { if (!it.isNullOrEmpty()) return File(it) }
+    System
+        .getenv(OutputDirPropertyKey)
+        ?.let { if (it.isNotEmpty()) return File(it) }
     return null
 }
 
