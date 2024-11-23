@@ -10,7 +10,7 @@ permissions:
 jobs:
   publish:
     name: Release build and publish
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     steps:
       # setup
       - name: Check out code
