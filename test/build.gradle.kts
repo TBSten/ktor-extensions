@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "me.tbsten.ktor.static.generation.test"
-version = "0.0.1-dev01"
+version = "0.0.1"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")

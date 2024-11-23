@@ -1,17 +1,17 @@
 pluginManagement {
     repositories {
+        includeBuild("../")
         google()
         mavenCentral()
         gradlePluginPortal()
-        mavenLocal()
     }
 }
 
 dependencyResolutionManagement {
     repositories {
+        includeBuild("../")
         google()
         mavenCentral()
-        mavenLocal()
     }
     versionCatalogs {
         create("libs") {
