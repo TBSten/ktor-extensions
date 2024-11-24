@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.kotlinJvm)
     `java-gradle-plugin`
-    alias(libs.plugins.ktorStaticGenerationLint)
-    alias(libs.plugins.ktorStaticGenerationPublish)
+    alias(libs.plugins.ktorExtensionsLint)
+    alias(libs.plugins.ktorExtensionsPublish)
 }
 
 sourceSets {}
@@ -23,7 +23,7 @@ gradlePlugin {
     }
 }
 
-ktorStaticGenerationPublish {
+ktorExtensionsPublish {
     artifactId = "ktor-static-generation-gradle-plugin"
 
     libraryName = "Ktor Static Generation Gradle Plugin"

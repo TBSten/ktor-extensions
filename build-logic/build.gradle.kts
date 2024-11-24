@@ -26,13 +26,13 @@ dependencies {
 gradlePlugin {
     plugins {
         register("lint") {
-            id = "ktor.staticGeneration.buildLogic.lint"
-            implementationClass = "me.tbsten.ktor.staticGeneration.KtorStaticGenerationLintPlugin"
+            id = "ktor.extensions.buildLogic.lint"
+            implementationClass = "me.tbsten.ktor.staticGeneration.KtorExtensionsLintPlugin"
         }
         register("publish") {
-            id = "ktor.staticGeneration.buildLogic.publish"
+            id = "ktor.extensions.buildLogic.publish"
             implementationClass =
-                "me.tbsten.ktor.staticGeneration.KtorStaticGenerationPublishPlugin"
+                "me.tbsten.ktor.staticGeneration.KtorExtensionsPublishPlugin"
         }
     }
 }

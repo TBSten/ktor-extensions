@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ktor-static-generation"
+rootProject.name = "ktor-static-generation-test"
 include(":test")

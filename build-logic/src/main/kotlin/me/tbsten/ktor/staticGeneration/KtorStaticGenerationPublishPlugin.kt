@@ -14,11 +14,11 @@ import org.gradle.api.publish.maven.MavenPomLicenseSpec
 private object PublishConstants {
     const val AUTHOR_NAME = "TBSten"
     const val AUTHOR_URL = "https://tbsten.me"
-    const val GITHUB_REPO = "ktor-static-generation"
+    const val GITHUB_REPO = "ktor-extensions"
     const val GITHUB_URL = "https://github.com/$AUTHOR_NAME/$GITHUB_REPO"
 }
 
-open class KtorStaticGenerationPublishPlugin : Plugin<Project> {
+open class KtorExtensionsPublishPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
@@ -34,8 +34,8 @@ open class KtorStaticGenerationPublishPlugin : Plugin<Project> {
 
             val publishExtension =
                 extensions.create(
-                    "ktorStaticGenerationPublish",
-                    KtorStaticGenerationPublishExtension::class.java,
+                    "ktorExtensionsPublish",
+                    KtorExtensionsPublishExtension::class.java,
                 )
 
             afterEvaluate {

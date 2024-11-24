@@ -1,5 +1,8 @@
 # ktor static generation
 
+[![Maven Central](https://img.shields.io/maven-central/v/com.kitakkun.kondition/core)](https://central.sonatype.com/search?namespace=com.kitakkun.kondition)
+[![License](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/kitakkun/Kondition/blob/master/LICENSE)
+
 A plugin for outputting specific ktor routes to html files, etc.
 By outputting content implemented with ktor as a file, it enables deployment to static hosting services, etc.
 
@@ -30,7 +33,9 @@ val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
 Assume that you have configured the routing settings for your project in configureRouting using the `routing` function.
 
 ```kt
-package <your_package >
+package <
+
+your_package >
 
     import kotlinx . coroutines . runBlocking
     import me . tbsten . ktor . staticGeneration . generateStatic
@@ -88,5 +93,5 @@ Now the routes marked with `staticGeneration("/path") { }` in your project will 
 
 ## Other
 
--   Currently only the GET method is supported.
--   Please ask or report any questions or bugs at [issue](https://github.com/TBSten/ktor-static-generation/issues).
+- Currently only the GET method is supported.
+- Please ask or report any questions or bugs at [issue](https://github.com/TBSten/ktor-static-generation/issues).

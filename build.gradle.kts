@@ -5,8 +5,8 @@ plugins {
     alias(libs.plugins.ktor) apply false
     alias(libs.plugins.binaryCompatibilityValidator) apply false
     alias(libs.plugins.ktlint) apply false
-    alias(libs.plugins.ktorStaticGenerationLint) apply false
-    alias(libs.plugins.ktorStaticGenerationPublish) apply false
+    alias(libs.plugins.ktorExtensionsLint) apply false
+    alias(libs.plugins.ktorExtensionsPublish) apply false
 }
 
 allprojects {

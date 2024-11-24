@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinJvm)
-    alias(libs.plugins.ktorStaticGenerationLint)
-    alias(libs.plugins.ktorStaticGenerationPublish)
+    alias(libs.plugins.ktorExtensionsLint)
+    alias(libs.plugins.ktorExtensionsPublish)
 }
 
 kotlin {}
@@ -19,7 +19,7 @@ tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
 
-ktorStaticGenerationPublish {
+ktorExtensionsPublish {
     artifactId = "ktor-static-generation"
 
     libraryName = "Ktor Static Generation Plugin"

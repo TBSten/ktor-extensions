@@ -1,5 +1,8 @@
 # ktor static generation
 
+[![Maven Central](https://img.shields.io/maven-central/v/me.tbsten.ktor/ktor-static-generation)](https://central.sonatype.com/search?namespace=me.tbsten.ktor)
+[![License](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/TBSten/ktor-extensions/blob/master/LICENSE)
+
 ktor の特定の route を html ファイルなどに出力するための plugin。
 ktor で実装したコンテンツをファイルとして出力することで、静的ホスティングサービスなどへの展開を可能にします。
 
@@ -30,11 +33,13 @@ val staticGenerate by tasks.getting(KtorStaticGenerationTask::class) {
 configureRouting に あなたのプロジェクトの routing 設定を `routing` 関数を使って設定しているものとします。
 
 ```kt
-package <your_package>
+package <
 
-import kotlinx.coroutines.runBlocking
-import me.tbsten.ktor.staticGeneration.generateStatic
-import <your_package>.configureRouting
+your_package >
+
+    import kotlinx . coroutines . runBlocking
+    import me . tbsten . ktor . staticGeneration . generateStatic
+    import<your_package>.configureRouting
 
 fun main() {
     runBlocking {
@@ -53,13 +58,14 @@ fun Application.module() {
 }
 ```
 
-### 4. static generate 対象の `get("/path/to/route") { }` を `staticGeneration("/path/to/route") { }` に置き換える
+### 4.static generate 対象の `get("/path/to/route") { }` を `staticGeneration("/path/to/route") { }` に置き換える
 
 ```diff
-- get("/") {
-+ staticGeneration("/") {
--     call.respondText("<h1>Hello World!</h1>", ContentType.Text.Html)
-- }
+-get("/") {
+    +staticGeneration("/") {
+        -call.respondText("<h1>Hello World!</h1>", ContentType.Text.Html)
+        -
+    }
 ````
 
 もしあなたの route がパラメータを含む場合、以下のように `staticPaths` 引数を指定する必要があります。
@@ -87,5 +93,5 @@ staticGeneration(
 
 ## その他
 
--   現在は GET メソッドのみサポートしています。
--   不明な点・不具合は [issue](https://github.com/TBSten/ktor-static-generation/issues) で質問・報告してください。
+- 現在は GET メソッドのみサポートしています。
+- 不明な点・不具合は [issue](https://github.com/TBSten/ktor-static-generation/issues) で質問・報告してください。

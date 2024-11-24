@@ -34,8 +34,8 @@ vanniktechMavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "v
 binaryCompatibilityValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version = "0.16.3" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlintGradlePlugin" }
 
-ktorStaticGenerationLint = { id = "ktor.staticGeneration.buildLogic.lint", version = "unspecified" }
-ktorStaticGenerationPublish = { id = "ktor.staticGeneration.buildLogic.publish", version = "unspecified" }
+ktorExtensionsLint = { id = "ktor.extensions.buildLogic.lint", version = "unspecified" }
+ktorExtensionsPublish = { id = "ktor.extensions.buildLogic.publish", version = "unspecified" }
 
 # for test
 ktorStaticGeneration = { id = "me.tbsten.ktor.static.generation", version.ref = "ktorStaticGeneration" }
