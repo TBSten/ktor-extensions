@@ -16,6 +16,6 @@ dependencyResolutionManagement {
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "ktor-static-generation-root"
+rootProject.name = "ktor-extensions"
 include(":ktor-static-generation")
 include(":ktor-static-generation-gradle-plugin")
