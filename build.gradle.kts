@@ -11,5 +11,8 @@ plugins {
 
 allprojects {
     group = "me.tbsten.ktor"
-    version = rootProject.libs.versions.ktorStaticGeneration.get()
+    version =
+        rootProject.libs.versions
+            .ktorStaticGeneration
+            .get()
 }
